@@ -1,0 +1,73 @@
+<LinearLayout 
+    android:id="@+id/mainLinearLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:weightSum="3"
+    android:background="@drawable/bg"
+    >
+    <LinearLayout android:id="@+id/headerLinearLayout"
+        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+    	android:layout_gravity="end"
+     	android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+        
+        <TextView 
+        android:id="@+id/timerTextView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Timer: "
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:layout_weight="1"
+        android:layout_marginRight="80dp"
+      	/>
+          
+        <TextView 
+        android:id="@+id/scoreTextView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Score: "
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_weight="1"
+      	/>
+        
+      
+        
+    </LinearLayout>
+ 
+    
+    <LinearLayout 
+	    android:id="@+id/gridLinearLayout"
+	    android:layout_width="match_parent"
+	    android:layout_height="400dp"
+	    android:orientation="vertical"  
+	    android:layout_weight="1">
+    </LinearLayout>
+    
+      <Button android:id="@+id/restartButton"
+        android:text="Restart"      
+        android:textColor="@android:color/white"
+        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="end"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="20dp"
+        />
+      
+</LinearLayout>
+
+<!-- code reserved 
+	    android:layout_gravity="end|top"
+ 		android:layout_marginTop="20dp"
+        android:paddingRight="30dp"
+-->
