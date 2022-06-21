@@ -19,12 +19,8 @@ import android.widget.Toast;
 
 public class MainActivitypairingnumbergame extends Activity implements OnClickListener {
 	
-	/*note: the reason why there is two arraylist is because the first version of this only make random number per row
-	 * but i did not remove the extra array for me to not forget the two solution i made thanks for understanding.
-	 * */
-	
+
 	ArrayList<Integer> arr = new ArrayList<Integer>();
-	ArrayList<Integer> arr2 = new ArrayList<Integer>();
 	String num1="",num2="";
 	int x = 0, score=0;
 	LinearLayout gridLinearLayout, mainLinearLayout;
@@ -34,6 +30,7 @@ public class MainActivitypairingnumbergame extends Activity implements OnClickLi
 	int counter = 0;
 	boolean isDelay = false, isGameFinished = false;
 	@Override
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
@@ -49,12 +46,11 @@ public class MainActivitypairingnumbergame extends Activity implements OnClickLi
 				num1= num2= "";
 				int set=0, k=0, j=0;
 				score = 0;
-//				setArr();
-				setArr2();
+				setArr();
 				for(int i=0; i<100; i++) {
 			        	LinearLayout linearLayout = (LinearLayout) gridLinearLayout.getChildAt(j);
 			        	Button button = (Button) linearLayout.getChildAt(k);
-			        	button.setTag(arr2.get(i));
+			        	button.setTag(arr.get(i));
 			        	button.setText("");
 			        	 if((i%2 == 0 && j%2 == 0) || (i%2 == 1 && j%2 == 1))
 			        		button.setBackgroundColor(Color.WHITE);
@@ -64,7 +60,6 @@ public class MainActivitypairingnumbergame extends Activity implements OnClickLi
 			        	if(set == 10) {
 			        		j++;
 			        		set = k = 0;
-//			        		setArr();
 			        	}    
 			    }
 			}
@@ -100,20 +95,19 @@ public class MainActivitypairingnumbergame extends Activity implements OnClickLi
         		set = 0;
         	}
         }
+        
         j=k=0;   
-//        setArr();
-        setArr2();
+        setArr();
         //set tag for every button
         for(int i=0; i<=100-1; i++) {
         	LinearLayout linearLayout = (LinearLayout) gridLinearLayout.getChildAt(j);
         	Button button = (Button) linearLayout.getChildAt(k);
-        	button.setTag(arr2.get(i));	
+        	button.setTag(arr.get(i));	
         	set = k +=1;	
         	if(set == 10) {
         		j++;
         		set = 0;
         		k = 0;
-//        		setArr();
         	}    
         }
         startTimer();
@@ -159,28 +153,16 @@ public class MainActivitypairingnumbergame extends Activity implements OnClickLi
 	        cTimer.cancel();
 	    }
 	}
-	
-//	public void setArr() {
-//		arr.clear();
-//		Random random = new Random(); 
-//		for(int i=0; i<=10-1; i++) {
-//			int num = (random.nextInt(11 - 1)+1);	
-//			while(arr.contains(num)) {
-//				num = (random.nextInt(11 - 1)+1);				
-//			}
-//			arr.add(num);
-//		}
-//	}
-	
-	public void setArr2() {
-		arr2.clear();
+		
+	public void setArr() {
+		arr.clear();
 		Random random = new Random(); 
 		for(int i=0; i<=100-1; i++) {
 			int num = (random.nextInt(11 - 1)+1);	
-			while(Collections.frequency(arr2, num)==10) {
+			while(Collections.frequency(arr, num)==10) {
 				num = (random.nextInt(11 - 1)+1);				
 			}
-			arr2.add(num);
+			arr.add(num);
 		}
 	}
 	
