@@ -133,8 +133,21 @@ public class MainActivitypairingnumbergame extends Activity implements OnClickLi
 	        	isGameFinished = true;
 	        	timerTextView.setText("done!");
 	        	cTimer.cancel();
-	        	if(score!=50)
+	        	if(score!=50) {
 	        		timerTextView.setText("loser!");
+					int set=0, j=0, k=0;
+        			for(int i=0; i<=100-1; i++) {
+        	        	LinearLayout linearLayout = (LinearLayout) gridLinearLayout.getChildAt(j);
+        	        	Button button = (Button) linearLayout.getChildAt(k);
+        	        	button.setText(button.getTag().toString());	
+        	        	set = k +=1;	
+        	        	if(set == 10) {
+        	        		j++;
+        	        		set = 0;
+        	        		k = 0;
+        	        	}    
+        	        }
+	        	}
 	        }
 	    };
 	    cTimer.start();
