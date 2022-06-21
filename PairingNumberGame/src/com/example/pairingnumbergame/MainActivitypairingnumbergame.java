@@ -177,7 +177,7 @@ public class MainActivitypairingnumbergame extends Activity implements OnClickLi
 		Random random = new Random(); 
 		for(int i=0; i<=100-1; i++) {
 			int num = (random.nextInt(11 - 1)+1);	
-			while(Collections.frequency(arr2, num)>10) {
+			while(Collections.frequency(arr2, num)==10) {
 				num = (random.nextInt(11 - 1)+1);				
 			}
 			arr2.add(num);
