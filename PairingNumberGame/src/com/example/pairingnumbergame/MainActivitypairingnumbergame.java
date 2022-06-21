@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 public class MainActivitypairingnumbergame extends Activity implements OnClickListener {
 	
-
 	ArrayList<Integer> arr = new ArrayList<Integer>();
 	String num1="",num2="";
 	int x = 0, score=0;
@@ -111,7 +110,6 @@ public class MainActivitypairingnumbergame extends Activity implements OnClickLi
         	}    
         }
         startTimer();
-        
 	}
 	
 	//Declare timer
